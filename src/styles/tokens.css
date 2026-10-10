@@ -1,0 +1,47 @@
+/* Design tokens. Every colour, size, and timing used by components comes from here. */
+:root {
+  color-scheme: light;
+
+  /* Ground and ink */
+  --paper: oklch(0.972 0.008 85);
+  --paper-shade: oklch(0.948 0.012 85);
+  --ink: oklch(0.27 0.05 262);
+  --ink-soft: oklch(0.47 0.035 262);
+  --rule: oklch(0.885 0.014 85);
+
+  /* Nacre: the three bookmark hues. Used for a tab and its page marker, nothing else. */
+  --nacre-rose: oklch(0.83 0.068 12);
+  --nacre-gold: oklch(0.885 0.085 88);
+  --nacre-blue: oklch(0.81 0.066 262);
+
+  /* Type */
+  --font-sans: 'Wanted Sans Variable', 'Wanted Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.1875rem;
+  --text-display: clamp(2.25rem, 1.35rem + 3.3vw, 3.75rem);
+
+  /* Space: 4px steps */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --gutter: clamp(1.25rem, 0.4rem + 3.4vw, 3rem);
+  --content-width: 72rem;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-page: 420ms;
+  --duration-stage: 520ms;
+
+  /* Layers, lowest to highest */
+  --z-stage: 0;
+  --z-nav: 1;
+  --z-skip: 10;
+}
