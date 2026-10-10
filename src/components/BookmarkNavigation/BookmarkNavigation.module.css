@@ -1,0 +1,79 @@
+.nav {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-nav);
+  pointer-events: none;
+}
+
+/* Hidden for the single frame before the stage has been measured. */
+.nav[data-ready='false'] {
+  visibility: hidden;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*
+  Width, height, transform, and --tab-w are written by BookmarkNavigation.tsx.
+  The box matches the tab's on-screen size, so type renders at its true size
+  and only picks up the tab's perspective.
+*/
+.tab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.38em;
+  padding-inline: 0.4em;
+  border-radius: calc(var(--tab-w, 96) * 0.1px) calc(var(--tab-w, 96) * 0.1px) 0 0;
+  color: var(--ink);
+  font-size: clamp(11.5px, calc(var(--tab-w, 96) * 0.138px), 17px);
+  font-weight: 560;
+  letter-spacing: 0.004em;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transform-origin: 0 0;
+  pointer-events: auto;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* A larger target than the visible tab, for fingers. */
+.tab::after {
+  content: '';
+  position: absolute;
+  inset: -8px -2px -6px;
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* Selected is shown by weight, underline, a filled icon, and the tab's height. Never by colour alone. */
+.tab[aria-current='page'] {
+  font-weight: 740;
+}
+
+.tab[aria-current='page'] .label {
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.3em;
+}
+
+.icon {
+  flex: none;
+  width: 1.12em;
+  height: 1.12em;
+}
+
+.nav[data-compact='true'] .icon {
+  display: none;
+}
