@@ -1,0 +1,69 @@
+.page {
+  flex: 1;
+  padding: var(--space-4) var(--gutter) var(--space-9);
+}
+
+.page[data-hue='rose'] {
+  --hue: var(--nacre-rose);
+}
+
+.page[data-hue='gold'] {
+  --hue: var(--nacre-gold);
+}
+
+.page[data-hue='blue'] {
+  --hue: var(--nacre-blue);
+}
+
+/* The rule is the page's top edge; the marker is its index tab, in the bookmark's hue. */
+.sheet {
+  position: relative;
+  max-width: var(--content-width);
+  min-height: 30svh;
+  margin-inline: auto;
+  padding-top: var(--space-7);
+  border-top: 1px solid var(--rule);
+  animation: page-in var(--duration-page) var(--ease-out) backwards;
+}
+
+.sheet::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 3.5rem;
+  height: 0.75rem;
+  border-radius: 0.45rem 0.45rem 0 0;
+  background: var(--hue);
+  transform-origin: bottom;
+  animation: marker-in var(--duration-page) var(--ease-out) backwards;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--text-display);
+  font-weight: 650;
+  letter-spacing: -0.032em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.blank {
+  max-width: 60ch;
+  margin: var(--space-4) 0 0;
+  color: var(--ink-soft);
+  font-size: var(--text-md);
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+}
+
+@keyframes marker-in {
+  from {
+    transform: scaleY(0);
+  }
+}

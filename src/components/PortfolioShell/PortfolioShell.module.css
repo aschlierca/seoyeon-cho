@@ -1,0 +1,61 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+.skip {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--gutter);
+  z-index: var(--z-skip);
+  padding: var(--space-2) var(--space-4);
+  border-radius: 0.5rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip:focus-visible {
+  transform: none;
+  outline-color: var(--nacre-blue);
+}
+
+.masthead {
+  padding: var(--space-5) var(--gutter) var(--space-2);
+}
+
+/* Same column as the page below, so the name and the page title share a left edge. */
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  max-width: var(--content-width);
+  margin-inline: auto;
+}
+
+.name {
+  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.role {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+@media (max-width: 639.98px) {
+  .masthead {
+    padding-top: var(--space-4);
+    padding-bottom: 0;
+  }
+}
