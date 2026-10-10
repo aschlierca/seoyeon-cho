@@ -1,0 +1,27 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+*.tsbuildinfo
+
+# local env and editor state
+.env
+.env.*
+*.local
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# logs
+*.log
+
+# private working docs (specs, references)
+doc/
+
+# Blender autosaves and backups
+*.blend1
+*.blend2
+blender/backups/
+blender/preview/
