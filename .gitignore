@@ -19,6 +19,7 @@ dist/
 
 # private working docs (specs, references)
 doc/
+.impeccable
 
 # Blender autosaves and backups
 *.blend1
